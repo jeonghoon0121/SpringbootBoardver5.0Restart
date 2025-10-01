@@ -33,4 +33,5 @@ public class BoardV5Controller {
     public String redirectToHome3(Model model) {
         return "boardv5/home";
     }
+
 }
