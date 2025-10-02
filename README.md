@@ -1,4 +1,5 @@
-﻿# SpringbootBoardver5.0Restart
+﻿# SpringbootComver1.0Gateway
+
 
 Aprogram port 8001
 Bprogram port 8002
@@ -14,4 +15,5 @@ REST 방식
 3.put 수정
 4.delete 삭제
 5.patch 부분수정
+
 
