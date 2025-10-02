@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>boardv5home</title>
+</head>
+<body>
+    <h1>boardv5 Aprogram port8001</h1>
+    <form action="http://localhost:8002/boardv5/receive" method="get">
+        <input type="hidden" name="username" value="JeongHoon">
+        <input type="hidden" name="testvalue" value="30">
+        <button type="submit">8002로 get으로 정보 전송</button>
+    </form>
+    <form action="http://localhost:8002/boardv5/receive" method="post">
+        <input type="hidden" name="username" value="JeongHoon">
+        <input type="hidden" name="testvalue" value="30">
+        <button type="submit">8002로 post으로 정보 전송</button>
+    </form>
+    <form action="http://localhost:8002/boardv5/receive1" method="get">
+        <input type="hidden" name="username" value="JeongHoon">
+        <input type="hidden" name="testvalue1" value="10">
+        <input type="hidden" name="testvalue2" value="20">
+        <input type="hidden" name="testvalue3" value="30">
+        <button type="submit">8002로 get으로 정보 전송</button>
+    </form>
+    <form action="http://localhost:8002/boardv5/receive1" method="post">
+        <input type="hidden" name="username" value="JeongHoon">
+        <input type="hidden" name="testvalue1" value="10">
+        <input type="hidden" name="testvalue2" value="20">
+        <input type="hidden" name="testvalue3" value="30">
+        <button type="submit">8002로 post으로 정보 전송</button>
+    </form>
+
+</body>
+</html>
