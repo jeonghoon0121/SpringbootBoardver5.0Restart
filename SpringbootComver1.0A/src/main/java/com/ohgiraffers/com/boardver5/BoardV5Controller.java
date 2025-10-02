@@ -6,9 +6,8 @@ import com.ohgiraffers.com.boardver3.CommentV3DTO;
 import com.ohgiraffers.com.boardver3.PostV3DTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -33,4 +32,10 @@ public class BoardV5Controller {
     public String redirectToHome3(Model model) {
         return "boardv5/home";
     }
+
+
+
+
+
+
 }

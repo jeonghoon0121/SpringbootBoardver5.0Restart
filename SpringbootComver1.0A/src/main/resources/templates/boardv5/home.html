@@ -31,5 +31,21 @@
         <button type="submit">8002로 post으로 정보 전송</button>
     </form>
 
+    <form action="http://localhost:8002/boardv5/resultUrl" method="post">
+        <input type="text" name="username" placeholder="이름 입력" required>
+        <button type="submit">Redirect 1.URL 방식 전송</button>
+    </form>
+    <form action="http://localhost:8002/boardv5/redirect/flash" method="post">
+        <input type="text" name="username" placeholder="이름 입력" required>
+        <button type="submit">Redirect 2.Flash 방식 전송</button>
+    </form>
+    <form action="http://localhost:8002/boardv5/redirect/session" method="post">
+        <input type="text" name="username" placeholder="이름 입력" required>
+        <button type="submit">Redirect 3.Session 방식 전송</button>
+    </form>
+
+
+
+
 </body>
 </html>
