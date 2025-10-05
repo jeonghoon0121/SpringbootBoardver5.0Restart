@@ -15,7 +15,7 @@ public class BoardV5RestfulController {
         this.boardV5RestfulService = boardV5RestfulService;
     }
 
-    @GetMapping("/boardv5rest")
+    @GetMapping("/boardv5")
     public List<BoardV5RestfulDTO> getDTOs(){
         return boardV5RestfulService.getAllBoards();
     }
