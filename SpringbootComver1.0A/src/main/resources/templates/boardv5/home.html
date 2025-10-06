@@ -64,26 +64,57 @@
     </form>
 
 
-    <h1>restful 통신 </h1>
-    <button onclick="location.href='/restful/boardv5'">테스트파일</button>
-    <button onclick="location.href='http://localhost:8002/restful/boardv5/user?name=a&b'">테스트파일</button>
+    <h3>REST GET 방식</h3>
+    <input type="text" id="nameInput1" placeholder="이름을 입력하세요">
+    <button onclick="sendName1()">GET 방식 전송</button>
 
+    <h3>REST POST 방식</h3>
+    <input type="text" id="nameInput2" placeholder="이름을 입력하세요">
+    <button onclick="sendName2()">POST 방식 전송</button>
 
+    <p id="response">서버 응답이 여기에 표시됩니다.</p>
 
-
-
-    <input type="text" id="username" placeholder="이름 입력">
-    <button onclick="getUser()">조회</button>
-    <p id="response"></p>
     <script>
-        function getUser() {
-            const name = document.getElementById('username').value;
+        function sendName1() {
+            const name = document.getElementById('nameInput1').value.trim();
+            if (!name) {
+                alert("이름을 입력해주세요.");
+                return;
+            }
+
             const url = `http://localhost:8002/restful/boardv5/user?name=${encodeURIComponent(name)}`;
 
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
-                    document.getElementById('response').textContent = `서버 응답: ${data.message}`;
+                    document.getElementById('response').textContent = `[GET] ${data.message}`;
+                })
+                .catch(error => {
+                    console.error('에러 발생:', error);
+                    document.getElementById('response').textContent = '요청 실패';
+                });
+        }
+
+        function sendName2() {
+            const name = document.getElementById('nameInput2').value.trim();
+            if (!name) {
+                alert("이름을 입력해주세요.");
+                return;
+            }
+
+            const url = "http://localhost:8002/restful/boardv5/user";
+            const payload = { name: name };
+
+            fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(payload)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('response').textContent = `[POST] ${data.message}`;
                 })
                 .catch(error => {
                     console.error('에러 발생:', error);
@@ -91,6 +122,15 @@
                 });
         }
     </script>
+
+
+
+
+
+
+
+
+
 
 
 

@@ -7,9 +7,8 @@ import java.util.HashMap;
 import java.util.Map;
 @CrossOrigin(origins = "http://localhost:8001")
 @RestController
-@RequestMapping("/rest/boardv5")
+@RequestMapping("/restful/boardv5")
 public class BoardV5RestController {
-
 
     @GetMapping("/user")
     public ResponseEntity<Map<String, String>> getUser(@RequestParam String name) {
@@ -17,5 +16,4 @@ public class BoardV5RestController {
         response.put("message", name + "님, 서버에서 데이터를 받았습니다.");
         return ResponseEntity.ok(response);
     }
-
 }

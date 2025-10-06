@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>boardv5home</title>
+</head>
+<body>
+    <h1>boardv5 Bprogram port8002</h1>
+
+
+    <h2>사용자 정보 조회</h2>
+
+    <input type="text" id="nameInput" placeholder="이름 입력">
+    <button onclick="fetchUser()">조회하기</button>
+
+    <ul id="userList"></ul>
+
+    <script>
+        function fetchUser() {
+            const name = document.getElementById('nameInput').value.trim();
+            if (!name) return;
+
+            const url = `http://localhost:8002/restful/boardv5/user?name=${encodeURIComponent(name)}`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const li = document.createElement('li');
+                    li.textContent = `조회 결과: ${data.message}`;
+                    document.getElementById('userList').appendChild(li);
+                })
+                .catch(error => {
+                    const li = document.createElement('li');
+                    li.textContent = `에러: ${error.message}`;
+                    document.getElementById('userList').appendChild(li);
+                });
+        }
+    </script>
+
+</body>
+</html>
