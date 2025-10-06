@@ -22,7 +22,7 @@ II. Redriect 방식
   //localhost8001 html -> localhost8002 CONTROLLER ->localhost8002 VIEW
 
 III. REST 방식
-1.get 조회 // 성공
+1.get 조회 // 성공, 메모리저장방식
 2.post 생성
 3.put 수정
 4.delete 삭제
@@ -39,6 +39,7 @@ III. REST 방식
 20251003 스프링부트 외부망환경 데이터 통신 성공 
 20251004 스프링부트 통신 테스트
 20251005 restful 데이터통신 시작 get방식 json 형태 성공 
+
 
 
 
